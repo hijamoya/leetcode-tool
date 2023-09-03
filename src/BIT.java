@@ -19,7 +19,8 @@ public class BIT {
     int res = 0;
     while (x > 0) {
       res += tree[x];
-      x = (x & x - 1);
+      // 去掉最後一個位數
+      x = (x & (x - 1));
     }
     return res;
   }

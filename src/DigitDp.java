@@ -1,7 +1,7 @@
 public class DigitDp {
   int k;
 
-  int dfs(Integer[][][][] memo, String num,int r, int i, int even, int odd, boolean isLimit, boolean isNum) {
+  int dfs(Integer[][][][] memo, String num, int r, int i, int even, int odd, boolean isLimit, boolean isNum) {
     if (i == num.length()) {
       return isNum && even == odd && r == 0 ? 1 : 0; // isNum 为 true 表示得到了一个合法数字
     }
