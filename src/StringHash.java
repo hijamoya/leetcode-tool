@@ -15,6 +15,7 @@ public class StringHash {
     }
   }
 
+  // 左閉右開 右邊是不include的，跟substring一樣
   long hash(int l, int r) {
     return hash[r] - hash[l] * pow[r - l];
   }
