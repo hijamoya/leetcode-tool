@@ -19,6 +19,9 @@ public class Combination {
     if (k == 0 || k == n) {
       return 1;
     }
+    if (k == 1) {
+      return n;
+    }
     return comb(n - 1, k) + comb(n - 1, k - 1);
   }
 }
