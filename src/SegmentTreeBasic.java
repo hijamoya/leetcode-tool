@@ -1,3 +1,11 @@
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
 /**
  * 基本线段树 (无懒标记，无区间修改方法，不维护 nums[i])
  * 支持：单点修改 / 单点查询 / 区间查询 (同时支持 O(logn) 时间的区间和，区间最大值，区间最小值查询)
@@ -119,4 +127,16 @@ class SegmentTreeBasic {
   private void pushUpMax(int i){
     treeMax[i] = Math.max(treeMax[i * 2], treeMax[i * 2 + 1]);
   }
+
+  private Map<Integer, Integer> discrete(int[] nums){ // 紧离散
+    Map<Integer, Integer> map = new HashMap<>();
+    Set<Integer> set = new HashSet<>();
+    for(int num : nums) set.add(num);
+    List<Integer> list = new ArrayList<>(set);
+    Collections.sort(list);
+    int idx = 0;
+    for(int num : list) map.put(num, ++idx);
+    return map;
+  }
+
 }
