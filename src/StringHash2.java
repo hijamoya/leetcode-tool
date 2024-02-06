@@ -43,8 +43,7 @@ class StringHash2 {
     return res;
   }
 
-  static
-  class StringHash {
+  static class StringHash {
     char[] str;
     long p, mod;
 
