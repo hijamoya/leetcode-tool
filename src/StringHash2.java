@@ -5,7 +5,7 @@ import java.util.TreeSet;
 class StringHash2 {
   public List<Integer> beautifulIndices(String s, String a, String b, int k) {
     long mod = (long)1e9 + 7;
-    int p1 = 13, p2 = 17;
+    int p1 = 31, p2 = 131;
     StringHash h1 = new StringHash(s, p1, mod);
     StringHash h2 = new StringHash(s, p2, mod);
 
