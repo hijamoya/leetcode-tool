@@ -10,7 +10,7 @@ public class QuickSelect {
         int l = 0;
         int r = nums.length - 1;
         while (true) {
-            int p = partition(list, l , r);
+            int p = partition(nums, l , r);
             if (p == target) {
                 return nums[p];
             } else if (p > target) {
