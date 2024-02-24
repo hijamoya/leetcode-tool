@@ -30,4 +30,8 @@ class UnionFind {
       rank[rootY]++;
     }
   }
+
+  void reset(int x) {
+    parent[x] = x;
+  }
 }
