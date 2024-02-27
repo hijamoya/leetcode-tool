@@ -8,6 +8,8 @@ public class CountPrime {
 
     void count() {
         Arrays.fill(primes, true);
+        primes[1] = false;
+        primes[0] = false;
         for (int i = 2; i * i <= n; i++) {
             if (!primes[i]) {
                 continue;
