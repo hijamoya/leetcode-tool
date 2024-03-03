@@ -1,9 +1,24 @@
+import java.util.TreeSet;
+
 public class BIT {
   private final int[] tree;
 
   // 注意，下標從1開始，所以傳進來的n實際上為n + 1
   public BIT(int n) {
     tree = new int[n];
+    /*如果需要離散化
+    TreeSet<Integer> set = new TreeSet<>();
+    for (int n : nums) {
+      set.add(n);
+    }
+    Map<Integer, Integer> idMap = new HashMap<>();
+    // 下標從1開始
+    int id = 1;
+    for (int n : set) {
+      idMap.put(n, id);
+      id++;
+    }
+    */
   }
 
   // 将下标 i 上的数加一
