@@ -34,6 +34,10 @@ public class Dijkstra {
       if (t[0] == t2) {
         return t[1];
       }
+      if (t[1] > dist[t[0]]) {
+        // 無謂的更新
+        continue;
+      }
       for (int[] g : graph[t[0]]) {
         int d = Math.min(dist[g[0]], dist[t[0]] + g[1]);
         // 只將最小距離的點加入，有助於減少計算量
