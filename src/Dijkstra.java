@@ -43,7 +43,7 @@ public class Dijkstra {
         continue;
       }
       for (int[] g : graph[t[0]]) {
-        int d = Math.min(dist[g[0]], dist[t[0]] + g[1]);
+        int d = t[1] + g[1];
         // 只將最小距離的點加入，有助於減少計算量
         if (d < dist[g[0]]) {
           dist[g[0]] = d;
