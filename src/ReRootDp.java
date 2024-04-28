@@ -39,6 +39,8 @@ public class ReRootDp {
     for (int y : graph[x]) { // 遍历 x 的邻居 y
       if (y != fa) { // 避免访问父节点
         // TODO: 要改的就是這，計算變化量
+        // y的子樹全部-1, 非y的子樹全部+1
+        // ans[y] = ans[x] - size[y] //y的子樹 + (n - size[y]) // 非y子樹
         ans[y] = ans[x] + graph.length - 2 * size[y];
         reroot(y, x); // x 是 y 的父节点
       }
