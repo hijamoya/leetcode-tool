@@ -4,6 +4,8 @@ import java.util.List;
 /**
  * 力扣上有很多这样的题，需要用到一个结论：
  * 给定一个数组，以某个右端点为结尾的所有子数组，其中不同的 And/Or/lcm/gcd 值至多只有 logU 个，其中U為組數中最大的數字
+ *
+ * 所以總複雜度為 O(nlogU)
  */
 // https://leetcode.cn/problems/smallest-subarrays-with-maximum-bitwise-or/solutions/1830911/by-endlesscheng-zai1/
 public class LogTrick {
