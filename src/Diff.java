@@ -2,7 +2,7 @@ public class Diff {
   // 差分模板 2772
   void check(int[] nums, int k) {
     int n = nums.length;
-    // 注意是 i + 1
+    // 注意是 n + 1
     int[] diff = new int[n + 1];
     int sumD = 0;
     for (int i = 0; i < n; i++) {
