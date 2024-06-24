@@ -23,4 +23,28 @@ public class Diff {
       diff[i + k] += x;
     }
   }
+
+  // 第二種 - 首輪不輪空的寫法
+  void check2(int[] nums, int k) {
+    int n = nums.length;
+    int[] diff = new int[n];
+    int sumD = 0;
+    for (int i = 0; i < n; i++) {
+      // 先累計上一次的差分值
+      sumD += diff[i];
+      // 做一些判斷...
+     boolean checkOk = false;
+      if (checkOk) {
+        if (i + k > n) {
+          // 不能累加了，注意是 > n，等於 n 仍然可以累加
+          return;
+        }
+        // 相當於 diff[i]++
+        sumD++;
+        if (i + k < n) {
+          diff[i + k]--;
+        }
+      }
+    }
+  }
 }
