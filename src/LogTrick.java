@@ -34,6 +34,7 @@ public class LogTrick {
     }
 
     // 用set的版本
+    // 從最右邊開始，每個以nums[i]為"左端點"的子組數的操作值
     void logTricks2(int[] nums) {
         int n = nums.length;
         Set<Integer> set = new HashSet<>();
