@@ -1,3 +1,5 @@
+import java.util.*;
+
 class SegmentTreeAdd{
     int[] nums;
     long[] tree, lazy;
@@ -127,5 +129,19 @@ class SegmentTreeAdd{
         tree[i * 2 + 1] += (t - c) * lazy[i];
         lazy[i * 2 + 1] += lazy[i];
         lazy[i] = 0; // 重置当前结点懒惰标记值（增量标记置0）
+    }
+
+    private Map<Integer, Integer> discrete(int[] nums){ // 紧离散
+        Map<Integer, Integer> map = new HashMap<>();
+        Set<Integer> set = new HashSet<>();
+        for(int num : nums) set.add(num);
+        List<Integer> list = new ArrayList<>(set);
+        Collections.sort(list);
+        int idx = 0;
+        for(int num : list) {
+            map.put(num, idx);
+            idx++;
+        }
+        return map;
     }
 }

@@ -135,7 +135,10 @@ class SegmentTreeBasic {
     List<Integer> list = new ArrayList<>(set);
     Collections.sort(list);
     int idx = 0;
-    for(int num : list) map.put(num, ++idx);
+    for(int num : list) {
+      map.put(num, idx);
+      idx++;
+    }
     return map;
   }
 
