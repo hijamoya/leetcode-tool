@@ -1,5 +1,6 @@
 /**
  * 維護前綴最小值
+ * 後綴最小值 則用 n - index 維護即可
  */
 public class PreMinBIT {
   private final int[] tree;
