@@ -3,6 +3,9 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.PriorityQueue;
 
+// for multiple constraint, check the below question
+// https://leetcode.cn/problems/minimum-cost-to-reach-destination-in-time/?envType=daily-question&envId=2024-10-03
+
 public class Dijkstra {
   List<int[]>[] graph;
   int n;
