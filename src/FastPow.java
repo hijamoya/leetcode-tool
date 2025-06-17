@@ -19,7 +19,7 @@ public class FastPow {
     if (n == 1) {
       return x;
     }
-    long k = myPow(x, n / 2);
+    long k = myPow2(x, n / 2);
     long k2 = (k * k) % mod;
     return n % 2 == 0 ? k2 : (k2 * x) % mod;
   }
