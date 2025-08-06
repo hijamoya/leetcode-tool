@@ -1,7 +1,4 @@
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 /**
  * 力扣上有很多这样的题，需要用到一个结论：
@@ -47,6 +44,24 @@ public class LogTrick {
             }
             // TODO: 值都在newSet裡面
             set = newSet;
+        }
+    }
+
+    // 重複多個貢獻結果的版本
+    // 從最右邊開始，每個以nums[i]為"左端點"的子組數的操作值
+    void logTricks3(int[] nums) {
+        int n = nums.length;
+        Map<Integer, Integer> map = new HashMap<>();
+        for (int i = n - 1; i >= 0; i--) {
+            Map<Integer, Integer> newMap = new HashMap<>();
+            newMap.put(nums[i], 1);
+            for (Map.Entry<Integer, Integer> e : map.entrySet()) {
+                int c = gcd(e.getKey(), nums[i]);
+                // 產生多個貢獻結果
+                newMap.put(c, newMap.getOrDefault(c, 0) + e.getValue());
+            }
+            // TODO: 值都在newMap裡面
+            map = newMap;
         }
     }
 }
